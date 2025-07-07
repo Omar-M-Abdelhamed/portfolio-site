@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Abdelhamed - Data Analyst & Insights Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4f46e5;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #4f46e5;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(124, 75, 162, 0.8));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #4f46e5;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Floating Animation */
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            background: white;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #7c4dff);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+        
+        .highlight {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: #f8fafc;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #7c4dff);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+        
+        .skill-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #4f46e5;
+        }
+        
+        .service-card h3 {
+            color: #4f46e5;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-card li {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .portfolio-icon {
+            font-size: 4rem;
+            color: white;
+            z-index: 2;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-tools {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .tool-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .portfolio-btn {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-btn:hover {
+            background: #3730a3;
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-content {
+            padding: 2rem;
+        }
+        
+        .portfolio-content h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-content p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: #f7fafc;
+            color: #4f46e5;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            z-index: 1001;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .modal-image {
+            font-size: 5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            margin: -2rem -2rem 2rem -2rem;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .modal-details h2 {
+            color: #2d3748;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-details h3 {
+            color: #4f46e5;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .modal-details ul {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-details li {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .modal-details li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-item {
+            background: #f7fafc;
+            color: #4f46e5;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #4f46e5, #7c4dff);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -20px;
+            border-right-color: white;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -20px;
+            border-left-color: white;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #4f46e5;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-content h3 {
+            color: #4f46e5;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content .company {
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content .duration {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .submit-btn {
+            background: white;
+            color: #4f46e5;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+            
+            .timeline-content::before {
+                left: -20px !important;
+                right: auto !important;
+                border-right-color: white !important;
+                border-left-color: transparent !important;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Omar Abdelhamed</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="hero-content">
+            <h1>Data Analyst & Insights Expert</h1>
+            <p>Transforming raw data into actionable business insights through advanced analytics, machine learning, and compelling visualizations</p>
+            <a href="#contact" class="cta-button">Start Your Project</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">About Me</h2>
+            <div class="about-content animate-on-scroll">
+                <div class="about-image">
+                    OA
+                </div>
+                <div class="about-text">
+                    <p>With a unique background in <span class="highlight">Philosophy</span> and <span class="highlight">Data Science</span>, I bring critical thinking and analytical rigor to every project. My approach combines statistical expertise with philosophical reasoning to uncover meaningful patterns in complex datasets.</p>
+                    
+                    <p>I specialize in <span class="highlight">data cleaning</span>, <span class="highlight">exploratory data analysis</span>, <span class="highlight">predictive modeling</span>, and <span class="highlight">web scraping</span>. Whether you need to optimize business processes, predict customer behavior, or extract insights from messy data, I deliver solutions that drive real business value.</p>
+                    
+                    <p>My experience spans across industries, from IoT security analysis at Nokia to teaching data science to 50+ students. I've successfully delivered projects for diverse clients, always focusing on <span class="highlight">clear communication</span> and <span class="highlight">actionable insights</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Core Skills</h2>
+            <div class="skills-grid animate-on-scroll">
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python & SQL</h3>
+                    <p>Advanced data manipulation, analysis, and database querying using pandas, numpy, scikit-learn, and SQL</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Visualization Tools</h3>
+                    <p>Creating compelling dashboards and reports with Excel, Power BI, Tableau, and Python libraries</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧹</div>
+                    <h3>Data Cleaning & EDA</h3>
+                    <p>Expert in data preprocessing, quality assessment, and exploratory data analysis for insights discovery</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔮</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Building machine learning models for forecasting, classification, and pattern recognition</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🕷️</div>
+                    <h3>Web Scraping</h3>
+                    <p>Automated data collection from websites using Python libraries like BeautifulSoup and Scrapy</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧠</div>
+                    <h3>Critical Thinking</h3>
+                    <p>Philosophy background enables unique problem-solving approaches and deeper analytical insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Services I Offer</h2>
+            <div class="services-grid animate-on-scroll">
+                <div class="service-card">
+                    <h3>Data Analysis & Insights</h3>
+                    <ul>
+                        <li>Exploratory Data Analysis (EDA)</li>
+                        <li>Statistical analysis and hypothesis testing</li>
+                        <li>Business intelligence reporting</li>
+                        <li>Performance metrics and KPI tracking</li>
+                        <li>A/B testing and experimentation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Data Visualization & Dashboards</h3>
+                    <ul>
+                        <li>Interactive Power BI dashboards</li>
+                        <li>Excel advanced reporting and charts</li>
+                        <li>Tableau visualizations</li>
+                        <li>Python-based plotting (matplotlib, seaborn)</li>
+                        <li>Custom reporting solutions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Predictive Analytics</h3>
+                    <ul>
+                        <li>Machine learning model development</li>
+                        <li>Time series forecasting</li>
+                        <li>Customer behavior prediction</li>
+                        <li>Risk assessment models</li>
+                        <li>Recommendation systems</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Data Collection & Processing</h3>
+                    <ul>
+                        <li>Web scraping and data extraction</li>
+                        <li>Data cleaning and preprocessing</li>
+                        <li>Database design and optimization</li>
+                        <li>API integration and automation</li>
+                        <li>Data pipeline development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <div class="portfolio-grid animate-on-scroll">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Power BI</span>
+                                <span class="tool-tag">SQL</span>
+                            </div>
+                            <button class="portfolio-btn" onclick="openModal('modal1')">View Details</button>
+                        </div>
+                        <div class="portfolio-icon">📊</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>E-commerce Sales Analytics Dashboard</h3>
+                        <p>Comprehensive analysis of 2 years of sales data, creating interactive dashboards that increased revenue insights by 35%</p>
+                        <div class="portfolio-stats">
+                            <span class="stat">500K+ Records</span>
+                            <span class="stat">12 KPIs</span>
+                            <span class="stat">Real-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Scikit-learn</span>
+                                <span class="tool-tag">Tableau</span>
+                            </div>
+                            <button class="portfolio-btn" onclick="openModal('modal2')">View Details</button>
+                        </div>
+                        <div class="portfolio-icon">🔮</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Customer Churn Prediction Model</h3>
+                        <p>Machine learning model predicting customer churn with 87% accuracy, helping reduce customer loss by 23%</p>
+                        <div class="portfolio-stats">
+                            <span class="stat">87% Accuracy</span>
+                            <span class="stat">10K+ Customers</span>
+                            <span class="stat">23% Reduction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">BeautifulSoup</span>
+                                <span class="tool-tag">Excel</span>
+                            </div>
+                            <button class="portfolio-btn" onclick="openModal('modal3')">View Details</button>
+                        </div>
+                        <div class="portfolio-icon">🕷️</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Real Estate Market Analysis</h3>
+                        <p>Automated web scraping of 5000+ property listings, providing market insights and price predictions</p>
+                        <div class="portfolio-stats">
+                            <span class="stat">5K+ Properties</span>
+                            <span class="stat">15 Markets</span>
+                            <span class="stat">Daily Updates</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tools">
+                                <span class="tool-tag">SQL</span>
+                                <span class="tool-tag">Excel</span>
+                                <span class="tool-tag">Power BI</span>
+                            </div>
+                            <button class="portfolio-btn" onclick="openModal('modal4')">View Details</button>
+                        </div>
+                        <div class="portfolio-icon">🏥</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Healthcare Operations Dashboard</h3>
+                        <p>Optimized hospital operations through data analysis, reducing patient wait times by 40% and improving efficiency</p>
+                        <div class="portfolio-stats">
+                            <span class="stat">40% Faster</span>
+                            <span class="stat">50K+ Patients</span>
+                            <span class="stat">Multi-location</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Pandas</span>
+                                <span class="tool-tag">Matplotlib</span>
+                            </div>
+                            <button class="portfolio-btn" onclick="openModal('modal5')">View Details</button>
+                        </div>
+                        <div class="portfolio-icon">📈</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Financial Risk Assessment</h3>
+                        <p>Comprehensive risk analysis for investment portfolio, identifying potential losses and optimization opportunities</p>
+                        <div class="portfolio-stats">
+                            <span class="stat">$2M+ Portfolio</span>
+                            <span class="stat">Risk Metrics</span>
+                            <span class="stat">ROI Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tools">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Time Series</span>
+                                <span class="tool-tag">Tableau</span>
+                            </div>
+                            <button class="portfolio-btn" onclick="openModal('modal6')">View Details</button>
+                        </div>
+                        <div class="portfolio-icon">🌾</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Agricultural Yield Forecasting</h3>
+                        <p>Time series analysis predicting crop yields based on weather patterns and historical data with 92% accuracy</p>
+                        <div class="portfolio-stats">
+                            <span class="stat">92% Accuracy</span>
+                            <span class="stat">5-year Data</span>
+                            <span class="stat">Climate Factors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>E-commerce Sales Analytics Dashboard</h2>
+            <div class="modal-body">
+                <div class="modal-image">📊</div>
+                <div class="modal-details">
+                    <h3>Project Overview</h3>
+                    <p>Developed a comprehensive sales analytics dashboard for a mid-sized e-commerce company, analyzing 2 years of transactional data to identify trends, seasonal patterns, and growth opportunities.</p>
+                    
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Processed and cleaned 500K+ transaction records</li>
+                        <li>Created 12 key performance indicators (KPIs)</li>
+                        <li>Implemented real-time data refresh capabilities</li>
+                        <li>Increased revenue insights accuracy by 35%</li>
+                        <li>Reduced reporting time from 2 days to 2 hours</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python (pandas, numpy)</span>
+                        <span class="tech-item">Power BI</span>
+                        <span class="tech-item">SQL Server</span>
+                        <span class="tech-item">DAX</span>
+                    </div>
+                    
+                    <h3>Business Impact</h3>
+                    <p>The dashboard enabled the client to identify their most profitable products, optimize inventory management, and increase overall revenue by 18% within 6 months.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Customer Churn Prediction Model</h2>
+            <div class="modal-body">
+                <div class="modal-image">🔮</div>
+                <div class="modal-details">
+                    <h3>Project Overview</h3>
+                    <p>Built a machine learning model to predict customer churn for a subscription-based service, enabling proactive retention strategies and reducing customer loss.</p>
+                    
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Achieved 87% prediction accuracy</li>
+                        <li>Analyzed behavior patterns of 10K+ customers</li>
+                        <li>Reduced customer churn by 23%</li>
+                        <li>Identified top 5 churn indicators</li>
+                        <li>Automated model retraining pipeline</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python (scikit-learn, pandas)</span>
+                        <span class="tech-item">Random Forest</span>
+                        <span class="tech-item">Feature Engineering</span>
+                        <span class="tech-item">Tableau</span>
+                    </div>
+                    
+                    <h3>Business Impact</h3>
+                    <p>The model helped the client save $250K annually by identifying at-risk customers early and implementing targeted retention campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Real Estate Market Analysis</h2>
+            <div class="modal-body">
+                <div class="modal-image">🕷️</div>
+                <div class="modal-details">
+                    <h3>Project Overview</h3>
+                    <p>Automated web scraping solution to collect real estate data from multiple sources, providing comprehensive market analysis and price predictions for property investors.</p>
+                    
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Scraped 5K+ property listings daily</li>
+                        <li>Covered 15 major metropolitan markets</li>
+                        <li>Built automated data pipeline</li>
+                        <li>Created price prediction models</li>
+                        <li>Delivered weekly market reports</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python (BeautifulSoup, Scrapy)</span>
+                        <span class="tech-item">Selenium</span>
+                        <span class="tech-item">Excel VBA</span>
+                        <span class="tech-item">Data Cleaning</span>
+                    </div>
+                    
+                    <h3>Business Impact</h3>
+                    <p>Enabled real estate investors to make data-driven decisions, resulting in 15% better investment returns through market timing and property selection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Healthcare Operations Dashboard</h2>
+            <div class="modal-body">
+                <div class="modal-image">🏥</div>
+                <div class="modal-details">
+                    <h3>Project Overview</h3>
+                    <p>Optimized hospital operations through comprehensive data analysis, focusing on patient flow, resource allocation, and operational efficiency improvements.</p>
+                    
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Reduced patient wait times by 40%</li>
+                        <li>Analyzed 50K+ patient records</li>
+                        <li>Optimized staff scheduling</li>
+                        <li>Improved bed utilization by 25%</li>
+                        <li>Multi-location dashboard implementation</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">SQL (Complex Queries)</span>
+                        <span class="tech-item">Excel (Advanced Functions)</span>
+                        <span class="tech-item">Power BI</span>
+                        <span class="tech-item">Statistical Analysis</span>
+                    </div>
+                    
+                    <h3>Business Impact</h3>
+                    <p>Improved patient satisfaction scores by 30% and reduced operational costs by $500K annually through better resource management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Financial Risk Assessment</h2>
+            <div class="modal-body">
+                <div class="modal-image">📈</div>
+                <div class="modal-details">
+                    <h3>Project Overview</h3>
+                    <p>Comprehensive risk analysis for investment portfolio management, providing detailed insights into potential losses and optimization opportunities.</p>
+                    
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Analyzed $2M+ investment portfolio</li>
+                        <li>Developed custom risk metrics</li>
+                        <li>ROI analysis and optimization</li>
+                        <li>Stress testing scenarios</li>
+                        <li>Automated reporting system</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python (pandas, numpy)</span>
+                        <span class="tech-item">Monte Carlo Simulation</span>
+                        <span class="tech-item">Matplotlib/Seaborn</span>
+                        <span class="tech-item">Financial Modeling</span>
+                    </div>
+                    
+                    <h3>Business Impact</h3>
+                    <p>Helped clients optimize their portfolio allocation, reducing risk by 20% while maintaining expected returns, resulting in more stable long-term performance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>Agricultural Yield Forecasting</h2>
+            <div class="modal-body">
+                <div class="modal-image">🌾</div>
+                <div class="modal-details">
+                    <h3>Project Overview</h3>
+                    <p>Time series analysis project predicting crop yields based on weather patterns, soil conditions, and historical agricultural data for farming optimization.</p>
+                    
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Achieved 92% prediction accuracy</li>
+                        <li>Analyzed 5 years of agricultural data</li>
+                        <li>Integrated climate factors</li>
+                        <li>Seasonal pattern recognition</li>
+                        <li>Automated forecasting pipeline</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python (Time Series)</span>
+                        <span class="tech-item">ARIMA/LSTM Models</span>
+                        <span class="tech-item">Weather APIs</span>
+                        <span class="tech-item">Tableau</span>
+                    </div>
+                    
+                    <h3>Business Impact</h3>
+                    <p>Enabled farmers to optimize planting schedules and resource allocation, increasing crop yields by 12% and reducing waste by 20%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Professional Experience</h2>
+            <div class="timeline animate-on-scroll">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Freelance Data Analyst</h3>
+                        <div class="company">Independent Consultant</div>
+                        <div class="duration">Dec 2023 - Present</div>
+                        <p>Providing data analysis and consulting services to clients across industries, delivering actionable insights using Python, SQL, and Tableau. Specializing in data cleaning, visualization, and predictive modeling projects.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Data Science Instructor</h3>
+                        <div class="company">GOMYCODE</div>
+                        <div class="duration">Aug 2023 - Dec 2023</div>
+                        <p>Enriched curriculum with 5+ real-world datasets and guided 50+ students through data analysis pipelines. Facilitated 10+ workshops focusing on practical data science applications.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Data Science Intern</h3>
+                        <div class="company">Nokia</div>
+                        <div class="duration">Aug 2023 - Sep 2023</div>
+                        <p>Explored IoT and Machine Learning through 3 real-world projects. Analyzed 200+ security incidents and presented findings to stakeholders, improving security understanding.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Data Scientist Intern</h3>
+                        <div class="company">Orange Digital Center Egypt</div>
+                        <div class="duration">Aug 2022 - Sep 2022</div>
+                        <p>Cleaned 50+ datasets, reducing data processing time by 20%. Developed 10+ visualizations and dashboards, significantly improving stakeholder comprehension.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll" style="color: white;">Let's Work Together</h2>
+            <div class="contact-content animate-on-scroll">
+                <div class="contact-info">
+                    <h3>Ready to Transform Your Data?</h3>
+                    <p>I'm available for freelance projects and consulting. Let's discuss how I can help you unlock the value hidden in your data.</p>
+                    <div class="contact-links">
+                        <a href="mailto:omarmohamed744744@gmail.com" class="contact-link">📧 Email Me</a>
+                        <a href="https://linkedin.com/in/omar-abdelhamed" class="contact-link">💼 LinkedIn</a>
+                        <a href="tel:+201551388977" class="contact-link">📱 Call Me</a>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project Details</label>
+                        <textarea id="project" name="project" rows="4" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Omar Abdelhamed. All rights reserved. | Data Analyst & Insights Expert</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent('New Project Inquiry');
+            const body = encodeURIComponent(
+                `Name: ${formData.get('name')}\n` +
+                `Email: ${formData.get('email')}\n` +
+                `Project Details: ${formData.get('project')}`
+            );
+            
+            window.location.href = `mailto:omarmohamed744744@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Reset form
+            form.reset();
+            alert('Thank you for your message! Your email client should now open with the message ready to send.');
+        }
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.skill-card, .service-card, .timeline-content').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Floating elements animation
+        const floatingElements = document.querySelectorAll('.floating-element');
+        floatingElements.forEach((element, index) => {
+            element.style.animationDelay = `${index * 2}s`;
+        });
+
+        // Dynamic typing effect for hero text
+        const heroText = document.querySelector('.hero h1');
+        const originalText = heroText.textContent;
+        let index = 0;
+        let isDeleting = false;
+        let text = '';
+
+        function typeWriter() {
+            if (isDeleting) {
+                text = originalText.substring(0, index - 1);
+                index--;
+            } else {
+                text = originalText.substring(0, index + 1);
+                index++;
+            }
+
+            if (!isDeleting && index === originalText.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                }, 2000);
+            } else if (isDeleting && index === 0) {
+                isDeleting = false;
+            }
+
+            if (index < originalText.length || isDeleting) {
+                setTimeout(typeWriter, isDeleting ? 50 : 100);
+            }
+        }
+
+        // Add particle effect to hero section
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = 'rgba(255, 255, 255, 0.6)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '100%';
+            particle.style.animation = 'particleFloat 8s linear infinite';
+            
+            document.querySelector('.hero').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Create particle effect
+        setInterval(createParticle, 300);
+
+        // Add CSS for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particleFloat {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add progress bar for scroll
+        const progressBar = document.createElement('div');
+        progressBar.style.position = 'fixed';
+        progressBar.style.top = '0';
+        progressBar.style.left = '0';
+        progressBar.style.width = '0%';
+        progressBar.style.height = '3px';
+        progressBar.style.background = 'linear-gradient(90deg, #4f46e5, #7c4dff)';
+        progressBar.style.zIndex = '1001';
+        progressBar.style.transition = 'width 0.3s ease';
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+
+        // Add mobile menu toggle
+        const mobileMenuToggle = document.createElement('button');
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.display = 'none';
+        mobileMenuToggle.style.background = 'none';
+        mobileMenuToggle.style.border = 'none';
+        mobileMenuToggle.style.fontSize = '1.5rem';
+        mobileMenuToggle.style.color = '#333';
+        mobileMenuToggle.style.cursor = 'pointer';
+        
+        document.querySelector('nav').appendChild(mobileMenuToggle);
+
+        // Mobile menu functionality
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        function handleMobileMenu(e) {
+            if (e.matches) {
+                mobileMenuToggle.style.display = 'block';
+                const navLinks = document.querySelector('.nav-links');
+                
+                mobileMenuToggle.addEventListener('click', () => {
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.display = 'none';
+                    } else {
+                        navLinks.style.display = 'flex';
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'absolute';
+                        navLinks.style.top = '100%';
+                        navLinks.style.left = '0';
+                        navLinks.style.right = '0';
+                        navLinks.style.background = 'rgba(255, 255, 255, 0.98)';
+                        navLinks.style.padding = '1rem';
+                        navLinks.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+                    }
+                });
+            } else {
+                mobileMenuToggle.style.display = 'none';
+                document.querySelector('.nav-links').style.display = 'flex';
+            }
+        }
+        
+        mediaQuery.addListener(handleMobileMenu);
+        handleMobileMenu(mediaQuery);
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add skill bars animation
+        const skillBars = document.querySelectorAll('.skill-card');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'skillCardAnimation 0.6s ease forwards';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => {
+            skillObserver.observe(bar);
+        });
+
+        // Add CSS for skill card animation
+        const skillStyle = document.createElement('style');
+        skillStyle.textContent = `
+            @keyframes skillCardAnimation {
+                0% {
+                    transform: translateY(30px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(skillStyle);
+
+        // Add contact form validation
+        const contactForm = document.querySelector('.contact-form');
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', validateInput);
+            input.addEventListener('input', clearError);
+        });
+
+        function validateInput(e) {
+            const input = e.target;
+            const value = input.value.trim();
+            
+            if (input.type === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    showError(input, 'Please enter a valid email address');
+                    return false;
+                }
+            }
+            
+            if (input.required && !value) {
+                showError(input, 'This field is required');
+                return false;
+            }
+            
+            clearError(input);
+            return true;
+        }
+
+        function showError(input, message) {
+            clearError(input);
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.style.color = '#ff6b6b';
+            errorDiv.style.fontSize = '0.9rem';
+            errorDiv.style.marginTop = '0.5rem';
+            errorDiv.textContent = message;
+            input.parentNode.appendChild(errorDiv);
+            input.style.borderColor = '#ff6b6b';
+        }
+
+        function clearError(input) {
+            const errorMessage = input.parentNode.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+            input.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+        }
+
+        // Add success message for form submission
+        function showSuccessMessage() {
+            const successDiv = document.createElement('div');
+            successDiv.style.position = 'fixed';
+            successDiv.style.top = '20px';
+            successDiv.style.right = '20px';
+            successDiv.style.background = '#10b981';
+            successDiv.style.color = 'white';
+            successDiv.style.padding = '1rem 2rem';
+            successDiv.style.borderRadius = '8px';
+            successDiv.style.zIndex = '1000';
+            successDiv.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+            successDiv.textContent = 'Message sent successfully!';
+            
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+        }
+
+        // Portfolio modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
+        // Portfolio items animation
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const portfolioObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        portfolioItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'all 0.6s ease';
+            portfolioObserver.observe(item);
+        });
+
+        // Enhanced form submission with validation
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const inputs = form.querySelectorAll('input, textarea');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!validateInput({ target: input })) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                return;
+            }
+            
+            const formData = new FormData(form);
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent('New Project Inquiry from ' + formData.get('name'));
+            const body = encodeURIComponent(
+                `Hello Omar,\n\n` +
+                `I'm interested in working with you on a data analysis project.\n\n` +
+                `Name: ${formData.get('name')}\n` +
+                `Email: ${formData.get('email')}\n\n` +
+                `Project Details:\n${formData.get('project')}\n\n` +
+                `Best regards,\n${formData.get('name')}`
+            );
+            
+            window.location.href = `mailto:omarmohamed744744@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Reset form and show success message
+            form.reset();
+            showSuccessMessage();
+        }
+    </script>
+</body>
+</html>
